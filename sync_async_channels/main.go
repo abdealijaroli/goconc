@@ -25,4 +25,5 @@ func getData(ch chan string) {
 	for val := range ch {
 		fmt.Println(val)
 	}
+	
 }
