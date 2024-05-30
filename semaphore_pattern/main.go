@@ -1,5 +1,9 @@
 package main
 
+func doSomething(i int, xi float64) {
+	panic("unimplemented")
+}
+
 func main() {
 	type Empty interface{}
 	var empty Empty
@@ -12,7 +16,8 @@ func main() {
 
 	for i, xi := range data {
 		go func(i int, xi float64) {
-			res[i] = doSomething(i, xi)
+			result := doSomething(i, xi)
+			res[i] = result
 			sem <- empty
 		}(i, xi)
 	}
