@@ -1,7 +1,7 @@
 package main
 
-func doSomething(i int, xi float64) {
-	panic("unimplemented")
+func doSomething(i int, xi float64) (int, float64) {
+	return i, xi
 }
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 
 	for i, xi := range data {
 		go func(i int, xi float64) {
-			result := doSomething(i, xi)
+			_, result := doSomething(i, xi)
 			res[i] = result
 			sem <- empty
 		}(i, xi)
