@@ -10,3 +10,7 @@ func (c *container) Iter() <-chan items {
 	}()
 	return ch
 }
+
+
+// use it as:
+for x := range container.Iter() { ... }
