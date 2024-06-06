@@ -11,7 +11,7 @@ func generate() chan int {
 		}
 	}()
 	return ch
-}
+} 
 
 func filter(in chan int, prime int) chan int {
 	out := make(chan int)
